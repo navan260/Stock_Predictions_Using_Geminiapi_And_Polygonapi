@@ -61,7 +61,7 @@ async function fetchReport(data) {
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const prompt = `You are a trading guru. Given the following data on stock prices over the past 3 days, write a report of no more than 150 words describing the stock's performance and recommending whether to buy, hold, or sell.
+    const prompt = `You are a trading guru. Given the following data on stock prices over the past 3 days, write a report of no more than 150 words describing the stock's performance and recommending whether to buy, hold, or sell. Give the output as plain text, dont include markdown
         
         Data:
         ${data}`;
