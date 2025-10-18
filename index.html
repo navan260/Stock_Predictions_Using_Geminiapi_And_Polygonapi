@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dodgy Dave's Stock Predictions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Dodgy <span>🧙‍♂️</span> Dave's</h1>
+        <h2>Stock Predictions</h2>
+      </header>
+      <main>
+        <div class="action-panel">
+          <form id="ticker-input-form">
+            <label for="ticker-input"
+              >Add up to 3 stock tickers below to get a super accurate stock
+              predictions report👇</label
+            >
+            <input id="ticker-input" type="text" maxlength="5" required />
+            <button type="submit">+</button>
+          </form>
+          <div id="tickers-list"></div>
+
+          <div
+            id="loadingArea"
+            style="display: none; flex-direction: column; align-items: center"
+          >
+            <div id="loader" style="margin: 30px 0">
+              <svg width="90" height="90" viewBox="0 0 90 90">
+                <circle
+                  cx="45"
+                  cy="45"
+                  r="36"
+                  stroke="#00cc99"
+                  stroke-width="7"
+                  fill="none"
+                  stroke-linecap="round"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    from="0 45 45"
+                    to="360 45 45"
+                  />
+                </circle>
+              </svg>
+            </div>
+            <p
+              id="apiMessage"
+              style="margin-top: 18px; font-size: 1.25em; color: #444"
+            >
+              Creating report...
+            </p>
+          </div>
+
+          <button class="generate-report-btn" disabled>GENERATE REPORT</button>
+        </div>
+
+        <div class="output-panel" style="display: none"></div>
+      </main>
+      <footer>
+        <p>Always correct 15% of the time!</p>
+        <small>© This is not real financial advice!</small>
+      </footer>
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
